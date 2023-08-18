@@ -15,7 +15,9 @@ function createFigmaPlay() {
     <title>${companyName} X Cybtekk</title>
     <meta property="og:title" content="Prototype UI for ${companyName} Application" />
     <meta property="og:type" content="UI/UX" />
-    <meta property="og:url" content="https://projects.cybtekk.com/${companyName.toLowerCase()}" />
+    <meta property="og:url" content="https://projects.cybtekk.com/${companyName
+      .toLowerCase()
+      .replace(/ /g, "-")}" />
     <meta property="og:image" content="./images/Collab.png" />
     <style>
         body {
