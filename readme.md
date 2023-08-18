@@ -8,4 +8,4 @@ Take care of these 3 things when copyng link from figma:
 - Set size to **Fit to screen**
 - Click on **Copy link** option (and NOT the embed one as that has sizing issues)
 
-> Request for more features through issues
+> Request for more features through issues.
