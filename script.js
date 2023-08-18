@@ -1,8 +1,8 @@
 function createFigmaPlay() {
-  const companyName = document.getElementById("Client").value;
-  const figmaLink = document.getElementById("Figma").value;
-  const fileInput = document.getElementById("pic");
-  const selectedFile = fileInput.files[0];
+  const companyName = document.getElementById("Client").value ?? "CompanyName";
+  const figmaLink = document.getElementById("Figma").value ?? "EmptyURL";
+  const fileInput = document.getElementById("pic") ?? "";
+  const selectedFile = fileInput.files[0] ?? "";
   const create = document.getElementById("create");
   create.classList.add("downloading");
 
