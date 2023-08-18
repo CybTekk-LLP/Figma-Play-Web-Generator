@@ -48,8 +48,7 @@ body {
 }
 
 .prototype input:focus {
-    outline: auto 2px Highlight;
-    outline: auto 2px -webkit-focus-ring-color;
+    outline: solid 2px #818CF8;
 }
 
 ::-webkit-file-upload-button {
@@ -83,6 +82,10 @@ body {
     cursor: pointer;
     justify-content: center;
     margin: 0 auto;
+}
+
+.button:focus {
+    outline: solid 2px #818CF8;
 }
 
 .btnlabel {
