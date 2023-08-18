@@ -1,7 +1,6 @@
 function createFigmaPlay() {
   let companyName = document.getElementById("Client").value;
   let figmaLink = document.getElementById("Figma").value;
-
   let textFile = null,
     makeTextFile = function (text) {
       let data = new Blob([text], { type: "text/html" });
