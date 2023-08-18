@@ -42,7 +42,7 @@ function createFigmaPlay() {
 <body>
     <img src="/images/Stylam-LOGO.png" alt="" height="40px" style="position: absolute; left: 10px; top: 10px;">
     <iframe id="show" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="100%"
-        src="${figmaLink}"
+        src="https://www.figma.com/embed?embed_host=share&url=${figmaLink}"
         allowfullscreen></iframe>
 
 </body>
