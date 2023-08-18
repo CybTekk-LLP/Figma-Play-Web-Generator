@@ -4,7 +4,7 @@ function createFigmaPlay() {
 
   let textFile = null,
     makeTextFile = function (text) {
-      let data = new Blob([text], { type: "text/plain" });
+      let data = new Blob([text], { type: "text/html" });
 
       // If we are replacing a previously generated file we need to
       // manually revoke the object URL to avoid memory leaks.
@@ -18,7 +18,7 @@ function createFigmaPlay() {
     };
 
   let link = document.createElement("a");
-  link.setAttribute("download", "info.txt");
+  link.setAttribute("download", "index.html");
   link.href = makeTextFile("hihihi");
   document.body.appendChild(link);
 
