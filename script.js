@@ -3,6 +3,8 @@ function createFigmaPlay() {
   const figmaLink = document.getElementById("Figma").value;
   const fileInput = document.getElementById("pic");
   const selectedFile = fileInput.files[0];
+  const create = document.getElementById("create");
+  create.classList.add("downloading");
 
   let figmaPlayHTML = `
 <!DOCTYPE html>
@@ -15,7 +17,6 @@ function createFigmaPlay() {
     <meta property="og:type" content="UI/UX" />
     <meta property="og:url" content="https://projects.cybtekk.com/${companyName.toLowerCase()}" />
     <meta property="og:image" content="./images/Collab.png" />
-
     <style>
         body {
             margin: 0;
@@ -25,13 +26,11 @@ function createFigmaPlay() {
             height: 100vh;
             background-color: #0e1012;
         }
-
         @media screen and (orientation:portrait) {
             img {
                 display: none;
             }
         }
-
         @media screen and (orientation:landscape) {
             img {
                 display: block;
@@ -43,13 +42,11 @@ function createFigmaPlay() {
 <body>
     <img src="/images/Stylam-LOGO.png" alt="" height="40px" style="position: absolute; left: 10px; top: 10px;">
     <iframe id="show" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="100%"
-        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fe1ulFMZqmASWaZQILc6afl%2FLeaders-of-Stylam%3Fpage-id%3D0%253A1%26node-id%3D161-83%26starting-point-node-id%3D161%253A83%26scaling%3Dscale-down%26mode%3Ddesign%26t%3Do1387GinOF9RHiUl-1"
+        src="${figmaLink}"
         allowfullscreen></iframe>
 
 </body>
-
 </html>
-
 `;
 
   let textFile = null,
@@ -78,4 +75,5 @@ function createFigmaPlay() {
     link.dispatchEvent(event);
     document.body.removeChild(link);
   });
+  create.classList.remove("downloading");
 }
