@@ -12,7 +12,7 @@ function createFigmaPlay() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${companyName} X Cybtekk</title>
+    <title>${companyName} X CybTEKK</title>
     <meta property="og:title" content="Prototype UI for ${companyName} Application" />
     <meta property="og:type" content="UI/UX" />
     <meta property="og:url" content="https://projects.cybtekk.com/${companyName
