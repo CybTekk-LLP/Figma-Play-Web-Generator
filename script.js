@@ -22,7 +22,7 @@ collabInput.addEventListener("change", () => {
   if (collabFile) readerCollab.readAsDataURL(collabFile);
   readerCollab.addEventListener("load", () => {
     // Get the data URL string
-    collabSrc = readerCollab.result ?? imageSrc;
+    collabSrc = readerCollab.result;
   });
 });
 
@@ -44,7 +44,7 @@ const createFigmaPlay = () => {
     <meta property="og:url" content="https://projects.cybtekk.com/${companyName
       .toLowerCase()
       .replace(/ /g, "-")}" />
-    <meta property="og:image" content="${collabSrc}" />
+    <meta property="og:image" content="${collabSrc ?? imageSrc}" />
     <style>
         body {
             margin: 0;
