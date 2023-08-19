@@ -1,5 +1,5 @@
 "use strict";
-function createFigmaPlay() {
+const createFigmaPlay = () => {
   const companyName = document.getElementById("Client").value;
   const figmaLink = document.getElementById("Figma").value;
   const fileInput = document.getElementById("pic");
@@ -97,4 +97,4 @@ function createFigmaPlay() {
     document.body.removeChild(link);
   });
   create.classList.remove("downloading");
-}
+};
