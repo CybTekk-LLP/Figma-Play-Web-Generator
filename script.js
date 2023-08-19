@@ -3,17 +3,25 @@ function createFigmaPlay() {
   const companyName = document.getElementById("Client").value;
   const figmaLink = document.getElementById("Figma").value;
   const fileInput = document.getElementById("pic");
+  const collabInput = document.getElementById("collab");
+  const collabFile = collabInput.files[0];
   const selectedFile = fileInput.files[0];
   let imageSrc = null;
+  let collabSrc = null;
   const reader = new FileReader();
+  const readerCollab = new FileReader();
   if (selectedFile) reader.readAsDataURL(selectedFile);
+  if (collabFile) readerCollab.readAsDataURL(collabFile);
   // FileReader will emit the load event when the data URL is ready
   // Access the string using result property inside the callback function
   reader.addEventListener("load", () => {
     // Get the data URL string
     imageSrc = reader.result;
   });
-
+  readerCollab.addEventListener("load", () => {
+    // Get the data URL string
+    collabSrc = readerCollab.result ?? imageSrc;
+  });
   const create = document.getElementById("create");
   create.classList.add("downloading");
 
@@ -29,7 +37,7 @@ function createFigmaPlay() {
     <meta property="og:url" content="https://projects.cybtekk.com/${companyName
       .toLowerCase()
       .replace(/ /g, "-")}" />
-    <meta property="og:image" content="./images/Collab.png" />
+    <meta property="og:image" content="${collabSrc}" />
     <style>
         body {
             margin: 0;
