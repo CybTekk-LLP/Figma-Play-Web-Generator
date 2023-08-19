@@ -52,6 +52,10 @@ body {
     color: #93999e;
 }
 
+.prototype input[type="file"].uploaded {
+    color: #fafffd;
+}
+
 .prototype input:focus {
     outline: solid 2px #818CF8;
 }
