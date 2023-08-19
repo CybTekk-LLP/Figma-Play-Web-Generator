@@ -4,13 +4,14 @@ function createFigmaPlay() {
   const figmaLink = document.getElementById("Figma").value;
   const fileInput = document.getElementById("pic");
   const selectedFile = fileInput.files[0];
+  let imageSrc = null;
   const reader = new FileReader();
   if (selectedFile) reader.readAsDataURL(selectedFile);
   // FileReader will emit the load event when the data URL is ready
   // Access the string using result property inside the callback function
   reader.addEventListener("load", () => {
     // Get the data URL string
-    console.log(reader.result);
+    imageSrc = reader.result;
   });
 
   const create = document.getElementById("create");
@@ -52,7 +53,7 @@ function createFigmaPlay() {
 </head>
 
 <body>
-    <img src="/images/Stylam-LOGO.png" alt="" height="40px" style="position: absolute; left: 10px; top: 10px;">
+    <img src="${imageSrc}" alt="" height="40px" style="position: absolute; left: 10px; top: 10px;">
     <iframe id="show" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="100%"
         src="https://www.figma.com/embed?embed_host=share&url=${figmaLink}"
         allowfullscreen></iframe>
