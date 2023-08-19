@@ -4,7 +4,15 @@ function createFigmaPlay() {
   const figmaLink = document.getElementById("Figma").value;
   const fileInput = document.getElementById("pic");
   const selectedFile = fileInput.files[0];
-  console.log(selectedFile);
+  const reader = new FileReader();
+  if (selectedFile) reader.readAsDataURL(selectedFile);
+  // FileReader will emit the load event when the data URL is ready
+  // Access the string using result property inside the callback function
+  reader.addEventListener("load", () => {
+    // Get the data URL string
+    console.log(reader.result);
+  });
+
   const create = document.getElementById("create");
   create.classList.add("downloading");
 
