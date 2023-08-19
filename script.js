@@ -1,27 +1,34 @@
 "use strict";
-const createFigmaPlay = () => {
-  const companyName = document.getElementById("Client").value;
-  const figmaLink = document.getElementById("Figma").value;
-  const fileInput = document.getElementById("pic");
-  const collabInput = document.getElementById("collab");
-  const collabFile = collabInput.files[0];
+
+const fileInput = document.getElementById("pic");
+let imageSrc = null;
+fileInput.addEventListener("change", () => {
   const selectedFile = fileInput.files[0];
-  let imageSrc = null;
-  let collabSrc = null;
   const reader = new FileReader();
-  const readerCollab = new FileReader();
   if (selectedFile) reader.readAsDataURL(selectedFile);
-  if (collabFile) readerCollab.readAsDataURL(collabFile);
   // FileReader will emit the load event when the data URL is ready
   // Access the string using result property inside the callback function
   reader.addEventListener("load", () => {
     // Get the data URL string
     imageSrc = reader.result;
   });
+});
+
+const collabInput = document.getElementById("collab");
+let collabSrc = null;
+collabInput.addEventListener("change", () => {
+  const collabFile = collabInput.files[0];
+  const readerCollab = new FileReader();
+  if (collabFile) readerCollab.readAsDataURL(collabFile);
   readerCollab.addEventListener("load", () => {
     // Get the data URL string
     collabSrc = readerCollab.result ?? imageSrc;
   });
+});
+
+const createFigmaPlay = () => {
+  const companyName = document.getElementById("Client").value;
+  const figmaLink = document.getElementById("Figma").value;
   const create = document.getElementById("create");
   create.classList.add("downloading");
 
