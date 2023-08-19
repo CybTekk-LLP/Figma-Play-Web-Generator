@@ -4,6 +4,7 @@ const fileInput = document.getElementById("pic");
 let imageSrc = null;
 fileInput.addEventListener("change", () => {
   const selectedFile = fileInput.files[0];
+  fileInput.classList.add("uploaded");
   const reader = new FileReader();
   if (selectedFile) reader.readAsDataURL(selectedFile);
   // FileReader will emit the load event when the data URL is ready
@@ -18,6 +19,7 @@ const collabInput = document.getElementById("collab");
 let collabSrc = null;
 collabInput.addEventListener("change", () => {
   const collabFile = collabInput.files[0];
+  collabInput.classList.add("uploaded");
   const readerCollab = new FileReader();
   if (collabFile) readerCollab.readAsDataURL(collabFile);
   readerCollab.addEventListener("load", () => {
