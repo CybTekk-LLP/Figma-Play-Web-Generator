@@ -1,5 +1,5 @@
 "use strict";
-function createFigmaPlay() {
+const createFigmaPlay = () => {
   const companyName = document.getElementById("Client").value;
   const figmaLink = document.getElementById("Figma").value;
   const fileInput = document.getElementById("pic");
@@ -37,7 +37,7 @@ function createFigmaPlay() {
     <meta property="og:url" content="https://projects.cybtekk.com/${companyName
       .toLowerCase()
       .replace(/ /g, "-")}" />
-    <meta property="og:image" content="${collabSrc}" />
+    <meta property="og:image" content="${collabSrc.toString()}" />
     <style>
         body {
             margin: 0;
@@ -61,7 +61,7 @@ function createFigmaPlay() {
 </head>
 
 <body>
-    <img src="${imageSrc}" alt="" height="40px" style="position: absolute; left: 10px; top: 10px;">
+    <img src="${imageSrc.toString()}" alt="" height="40px" style="position: absolute; left: 10px; top: 10px;">
     <iframe id="show" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="100%"
         src="https://www.figma.com/embed?embed_host=share&url=${figmaLink}"
         allowfullscreen></iframe>
@@ -97,4 +97,4 @@ function createFigmaPlay() {
     document.body.removeChild(link);
   });
   create.classList.remove("downloading");
-}
+};
