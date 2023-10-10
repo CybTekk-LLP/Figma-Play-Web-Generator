@@ -51,6 +51,7 @@ const createFigmaPlay = () => {
         body {
             margin: 0;
             padding: 0;
+            overflow: hidden;
             box-sizing: border-box;
             width: 100vw;
             height: 100vh;
